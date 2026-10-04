@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kahaani — Creative Growth Agency | Your Brand. Your Story.</title>
     <meta name="description" content="Kahaani helps small businesses, cafés, B&Bs, and events build a stronger online presence through reels, photography, websites, and social media.">
-    <meta name="theme-color" content="#121824">
+    <meta name="theme-color" content="#fafafa">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
@@ -15,7 +15,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         /* -----------------------------------------------------------------
@@ -541,7 +541,7 @@
         }
 
         .work-card:hover .work-img-wrapper img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
         .work-info {
@@ -1138,6 +1138,333 @@
             stroke-linecap: round;
             stroke-linejoin: round;
         }
+
+        :root {
+            --color-bg: #fafafa;
+            --color-surface: #ffffff;
+            --color-surface-elevated: #f0f0ed;
+            --color-text-main: #111111;
+            --color-text-muted: #62625e;
+            --color-text-inverse: #fafafa;
+            --color-accent-primary: #ef5a3c;
+            --color-accent-hover: #d9472d;
+            --color-accent-subtle: #ffe6dc;
+            --color-brand-dark: #111111;
+            --color-brand-gold: #d8ff45;
+            --color-border: #deded9;
+            --color-border-focus: #ef5a3c;
+            --font-heading: 'Anton', Impact, sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --container-max: 1360px;
+        }
+
+        body { background: var(--color-bg); }
+        h1, h2, h3, h4 { text-transform: uppercase; line-height: 0.98; }
+        .container { padding-left: 2rem; padding-right: 2rem; }
+        .section-padding { padding: 7.5rem 0; }
+        .navbar {
+            background: rgba(250, 250, 250, 0.94);
+            border-bottom-color: #e8e8e4;
+            backdrop-filter: blur(0);
+            -webkit-backdrop-filter: blur(0);
+            transition: background var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth), backdrop-filter var(--transition-smooth);
+        }
+        .navbar.is-scrolled {
+            background: rgba(250, 250, 250, 0.84);
+            border-bottom-color: rgba(17, 17, 17, 0.12);
+            box-shadow: 0 8px 24px rgba(17, 17, 17, 0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .nav-container { height: 76px; }
+        .brand-logo {
+            font-family: var(--font-heading);
+            font-size: 1.55rem;
+            line-height: 0.9;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+        .brand-logo .dot { color: var(--color-text-main); }
+        .nav-links { gap: 1.8rem; }
+        .nav-link, .nav-cta .btn {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .nav-link { transition: opacity var(--transition-fast); }
+        .nav-link:hover { color: var(--color-text-main); opacity: 0.55; }
+        .btn {
+            min-height: 46px;
+            padding: 0.85rem 1.4rem;
+            border-width: 1px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .btn-primary { background: var(--color-text-main); color: #fff; }
+        .btn-primary:hover { background: var(--color-accent-primary); box-shadow: none; }
+
+        .hero-section {
+            padding: 5.2rem 0 4rem;
+            overflow: hidden;
+        }
+        .hero-grid { display: block; }
+        .hero-content { max-width: none; }
+        .hero-content .tag-pill { margin-bottom: 1.2rem; }
+        .hero-title {
+            max-width: 1180px;
+            margin-bottom: 1.15rem;
+            color: var(--color-text-main);
+            font-size: 8.6rem;
+            font-weight: 400;
+            line-height: 0.82;
+            letter-spacing: 0;
+        }
+        .hero-title .hero-word--accent { color: var(--color-accent-primary); }
+        .hero-title .hero-word { display: inline-block; animation: hero-word-enter 850ms cubic-bezier(.2,.7,.2,1) both; }
+        .hero-word--one { animation-delay: 80ms !important; }
+        .hero-word--two { animation-delay: 180ms !important; }
+        .hero-word--three { animation-delay: 280ms !important; }
+        @keyframes hero-word-enter {
+            from { opacity: 0; transform: translateY(28px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-description {
+            max-width: 700px;
+            margin: 1.7rem 0 1.4rem;
+            color: var(--color-text-main);
+            font-size: 0.93rem;
+            font-weight: 800;
+            line-height: 1.5;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+        }
+        .hero-marquee {
+            width: calc(100% + 4rem);
+            margin: 1.2rem 0 0 -2rem;
+            overflow: hidden;
+            border-top: 1px solid #deded9;
+            border-bottom: 1px solid #deded9;
+        }
+        .hero-marquee-track { display: flex; width: max-content; animation: hero-marquee-scroll 26s linear infinite; }
+        .hero-marquee-group {
+            display: flex;
+            align-items: center;
+            flex: 0 0 auto;
+            gap: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            color: #111;
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            line-height: 1;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .hero-marquee-group span:nth-child(even) { color: var(--color-accent-primary); }
+        @keyframes hero-marquee-scroll { to { transform: translateX(-50%); } }
+        .hero-actions { display: none; }
+        .hero-visual { display: none; }
+        .hero-gallery {
+            display: grid;
+            grid-template-columns: 1.15fr 0.9fr 1fr;
+            gap: 1rem;
+            margin-top: 2.1rem;
+            align-items: stretch;
+        }
+        .hero-shot {
+            position: relative;
+            min-width: 0;
+            height: 330px;
+            overflow: hidden;
+            border-radius: 26px;
+            background: #e8e8e3;
+        }
+        .hero-shot:nth-child(2) { height: 290px; margin-top: 2.5rem; }
+        .hero-shot:nth-child(3) { height: 310px; margin-top: 0.8rem; }
+        .hero-shot img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms cubic-bezier(.2,.7,.2,1); }
+        .hero-shot:hover img { transform: scale(1.045); }
+        .hero-shot-label {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            padding: 0.55rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(255,255,255,.92);
+            color: #111;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+        }
+        .hero-shot:hover .hero-shot-label { transform: translateY(-4px); background: #111; color: #fff; }
+        .mission-section { padding: 7rem 0; background: #e9f2df; }
+        .mission-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 4rem; align-items: start; }
+        .mission-kicker, .section-kicker {
+            display: block;
+            margin-bottom: 1rem;
+            color: var(--color-accent-primary);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .mission-title { max-width: 520px; font-size: 4.2rem; font-weight: 400; }
+        .mission-copy { max-width: 690px; padding-top: 2.1rem; }
+        .mission-copy p { color: #30332d; font-size: 1.22rem; line-height: 1.65; }
+        .mission-link { display: inline-flex; margin-top: 1.6rem; color: #111; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-decoration: none; text-transform: uppercase; border-bottom: 1px solid #111; padding-bottom: 0.35rem; }
+
+        .section-header { max-width: 780px; margin-bottom: 3.4rem; }
+        .section-header.text-center { text-align: left; margin-left: 0; }
+        .section-title { font-size: 4.2rem; font-weight: 400; line-height: 0.98; letter-spacing: 0; }
+        .section-subtitle { max-width: 620px; color: var(--color-text-muted); font-size: 1.05rem; }
+        .tag-pill { padding: 0; margin-bottom: 1rem; background: transparent; color: var(--color-accent-primary); font-size: 0.72rem; letter-spacing: 0.1em; }
+        .work-section { background: var(--color-bg); border: 0; }
+        .work-filters { justify-content: flex-start; gap: 0.5rem; margin-bottom: 2rem; }
+        .filter-btn { padding: 0.72rem 1rem; border-color: #d8d8d2; background: transparent; color: #444; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+        .filter-btn:hover, .filter-btn.active { border-color: #111; background: #111; }
+        .work-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem; }
+        .work-card { border: 0; border-radius: 26px; background: #fff; }
+        .work-card { transition: transform 400ms cubic-bezier(.2,.7,.2,1), box-shadow 400ms cubic-bezier(.2,.7,.2,1); }
+        .work-card:hover { transform: translateY(-5px) scale(1.025); box-shadow: 0 18px 40px rgba(17,17,17,.1); z-index: 1; }
+        .work-img-wrapper { aspect-ratio: 1.12 / 1; background: #eee; }
+        .work-info { padding: 1.25rem 1.35rem 1.4rem; }
+        .work-category { color: var(--color-accent-primary); font-size: 0.68rem; letter-spacing: 0.1em; }
+        .work-title { margin-bottom: 0.4rem; font-size: 1.45rem; font-weight: 400; line-height: 1.05; }
+        .work-desc { font-size: 0.9rem; }
+
+        .services-section { background: #f1eee8; }
+        .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid #d5d1ca; }
+        .service-card {
+            min-height: 250px;
+            padding: 2rem 2rem 2.2rem 0;
+            border: 0;
+            border-bottom: 1px solid #d5d1ca;
+            border-radius: 0;
+            background: transparent;
+            transition: padding var(--transition-smooth), background var(--transition-smooth);
+        }
+        .service-card:nth-child(odd) { padding-right: 2.5rem; }
+        .service-card:nth-child(even) { padding-left: 2rem; border-left: 1px solid #d5d1ca; }
+        .service-card:hover { transform: none; border-color: #d5d1ca; box-shadow: none; padding-left: 0.6rem; background: transparent; }
+        .service-card:nth-child(even):hover { padding-left: 2.6rem; }
+        .service-icon { width: 42px; height: 42px; border-radius: 50%; background: #d8ff45; color: #111; }
+        .service-title { font-size: 1.8rem; font-weight: 400; }
+        .service-price { color: #111; font-size: 1rem; }
+        .service-description { max-width: 440px; }
+        .package-card { border-radius: 28px; background: #141414; box-shadow: none; }
+        .package-header-text { font-weight: 400; }
+        .package-pricing-box { border-radius: 20px; }
+        .approach-section { background: #fafafa; border: 0; }
+        .steps-grid { gap: 0; border-top: 1px solid var(--color-border); }
+        .step-card { padding: 2rem 2rem 2rem 0; border: 0; border-bottom: 1px solid var(--color-border); border-radius: 0; background: transparent; }
+        .step-card + .step-card { padding-left: 2rem; border-left: 1px solid var(--color-border); }
+        .step-number { font-size: 0.75rem; letter-spacing: 0.1em; }
+        .step-title { font-size: 1.9rem; font-weight: 400; }
+        .cta-band { padding: 6rem 0; background: #d8ff45; }
+        .cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+        .cta-title { max-width: 900px; font-size: 5rem; font-weight: 400; }
+        .cta-arrow {
+            display: grid;
+            width: 78px;
+            height: 78px;
+            flex: 0 0 auto;
+            place-items: center;
+            border: 0;
+            border-radius: 50%;
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            transition: transform var(--transition-fast), background var(--transition-fast);
+        }
+        .cta-arrow:hover { transform: rotate(45deg); background: var(--color-accent-primary); }
+        .cta-arrow svg { width: 29px; height: 29px; }
+        .enquiry-section { padding: 7rem 0; scroll-margin-top: 76px; }
+        .enquiry-info-title { font-size: 3rem; font-weight: 400; line-height: 1; }
+        .enquiry-form-card, .contact-details-box { border: 0; border-radius: 24px; background: #f0f0ed; box-shadow: none; }
+        .form-control { border-color: #d4d4cf; border-radius: 12px; background: #fff; }
+        .site-footer { padding: 4.5rem 0 2rem; background: #111; }
+        .footer-grid { display: grid; grid-template-columns: 1.4fr 0.7fr 0.7fr 1fr; gap: 2rem; }
+        .footer-logo { font-size: 3rem; font-weight: 400; text-transform: uppercase; }
+        .footer-tagline { color: #c5c5bf; }
+        .footer-column-title { margin-bottom: 1rem; color: #9a9a94; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        .footer-links { display: grid; gap: 0.7rem; list-style: none; }
+        .footer-links a, .footer-info a { color: #fff; font-size: 0.88rem; text-decoration: none; }
+        .footer-links a:hover, .footer-info a:hover { color: var(--color-brand-gold); }
+        .footer-info p { margin-bottom: 0.7rem; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,.16); margin-top: 1rem; }
+
+        .motion-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 650ms cubic-bezier(.2,.7,.2,1), transform 650ms cubic-bezier(.2,.7,.2,1);
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+        .motion-reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .nav-cta .btn::after { content: '\2197'; display: inline-block; transition: transform var(--transition-fast); }
+        .nav-cta .btn:hover::after { transform: translate(3px, -3px); }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-title .hero-word, .hero-marquee-track { animation: none !important; }
+            .motion-reveal, .motion-reveal.is-visible { opacity: 1; transform: none; transition: none; }
+        }
+
+        @media (max-width: 1000px) {
+            .hero-title { font-size: 6rem; }
+            .hero-shot { height: 280px; }
+            .hero-shot:nth-child(2) { height: 250px; }
+            .hero-shot:nth-child(3) { height: 265px; }
+            .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .cta-title { font-size: 4rem; }
+        }
+        @media (max-width: 850px) {
+            .nav-links { top: 76px; background: #fafafa; }
+            .nav-link { text-align: center; }
+            .hero-title { font-size: 5.4rem; }
+            .mission-grid { grid-template-columns: 1fr; gap: 0; }
+            .mission-title { font-size: 3.5rem; }
+            .mission-copy { padding-top: 1.4rem; }
+            .section-header.text-center { text-align: left; }
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card, .service-card:nth-child(odd), .service-card:nth-child(even) { min-height: 0; padding: 1.8rem 0; border-left: 0; }
+            .service-card:hover, .service-card:nth-child(even):hover { padding-left: 0.4rem; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .step-card, .step-card + .step-card { padding: 1.6rem 0; border-left: 0; }
+        }
+        @media (max-width: 600px) {
+            .container { padding-left: 1.1rem; padding-right: 1.1rem; }
+            .section-padding { padding: 4.5rem 0; }
+            .hero-section { padding: 3.6rem 0 2.6rem; }
+            .hero-title { font-size: 3.7rem; line-height: 0.86; }
+            .hero-marquee { width: calc(100% + 2.2rem); margin-left: -1.1rem; }
+            .hero-marquee-group { gap: 1rem; padding: 0.7rem 1.1rem; font-size: 1rem; }
+            .hero-description { margin-top: 1.2rem; font-size: 0.74rem; }
+            .hero-gallery { grid-template-columns: 1fr 1fr; gap: 0.65rem; margin-top: 1.5rem; }
+            .hero-shot { height: 200px; border-radius: 18px; }
+            .hero-shot:nth-child(2) { height: 170px; margin-top: 1.8rem; }
+            .hero-shot:nth-child(3) { display: none; }
+            .hero-shot-label { left: 0.55rem; bottom: 0.55rem; padding: 0.45rem 0.65rem; font-size: 0.56rem; }
+            .mission-section { padding: 4.5rem 0; }
+            .mission-title, .section-title { font-size: 3rem; }
+            .mission-copy p { font-size: 1.05rem; }
+            .work-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+            .work-img-wrapper { aspect-ratio: 1.2 / 1; }
+            .work-filters { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.4rem; }
+            .filter-btn { flex: 0 0 auto; }
+            .package-card { padding: 2.3rem 1.2rem; }
+            .cta-band { padding: 4rem 0; }
+            .cta-inner { align-items: flex-start; }
+            .cta-title { font-size: 3.1rem; }
+            .cta-arrow { width: 56px; height: 56px; }
+            .enquiry-section { padding: 4.5rem 0; }
+            .enquiry-info-title { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem 1rem; }
+            .footer-brand { grid-column: 1 / -1; }
+            .footer-logo { font-size: 2.6rem; }
+            .footer-bottom { align-items: flex-start; flex-direction: column; }
+        }
     </style>
 </head>
 <body>
@@ -1165,11 +1492,11 @@
             <nav>
                 <ul class="nav-links" id="primary-navigation">
                     <li><a href="#work" class="nav-link">Our Work</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#package" class="nav-link">Package</a></li>
-                    <li><a href="#approach" class="nav-link">Approach</a></li>
+                    <li><a href="#services" class="nav-link">Our Services</a></li>
+                    <li><a href="#package" class="nav-link">Our Stories</a></li>
+                    <li><a href="#approach" class="nav-link">About Us</a></li>
                     <li class="nav-cta">
-                        <a href="#enquiry" class="btn btn-primary">Get Started</a>
+                        <a href="#enquiry" class="btn btn-primary">Tell Your Story</a>
                     </li>
                 </ul>
             </nav>
@@ -1184,29 +1511,47 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content">
-                        <span class="tag-pill">Creative Growth Agency</span>
-                        <h1 class="hero-title">Your Brand.<br>Your Story.</h1>
-                        <p class="hero-description">
-                            Kahaani helps cafés, boutique stays, and event brands build a stronger presence through reels, photography, websites, and social media.
-                        </p>
+                        <span class="tag-pill">Independent creative growth studio</span>
+                        <h1 class="hero-title"><span class="hero-word hero-word--one">Creativity.</span><br><span class="hero-word hero-word--accent hero-word--two">Strategy.</span><br><span class="hero-word hero-word--three">Stories.</span></h1>
+                        <p class="hero-description">We lead with storytelling. We scale with digital.</p>
+                        <div class="hero-marquee" aria-hidden="true">
+                            <div class="hero-marquee-track" aria-hidden="true">
+                                <div class="hero-marquee-group"><span>Creativity.</span><span>Strategy.</span><span>Stories.</span><span>✳</span></div>
+                                <div class="hero-marquee-group"><span>Creativity.</span><span>Strategy.</span><span>Stories.</span><span>✳</span></div>
+                            </div>
+                        </div>
                         <div class="hero-actions">
                             <a href="#work" class="btn btn-primary">View Our Work</a>
                             <a href="#enquiry" class="btn btn-secondary">Get Started</a>
                         </div>
                     </div>
+                </div>
+                <div class="hero-gallery" aria-label="Featured Kahaani creative work">
+                    <figure class="hero-shot">
+                        <img src="images/cafes/cafe1.jpg" alt="Coffee and latte art photographed for a local cafe">
+                        <figcaption class="hero-shot-label">Brand storytelling · Cafes</figcaption>
+                    </figure>
+                    <figure class="hero-shot">
+                        <img src="images/bar/bar1.jpg" alt="Espresso martini being poured behind a bar">
+                        <figcaption class="hero-shot-label">Visuals · Hospitality</figcaption>
+                    </figure>
+                    <figure class="hero-shot">
+                        <img src="images/events/event1.jpg" alt="Live performers on stage at a music event">
+                        <figcaption class="hero-shot-label">Stories · Experiences</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
 
-                    <div class="hero-visual" aria-hidden="true">
-                        <div class="visual-card-stack">
-                            <div class="visual-card visual-card-1">
-                                <span class="card-tag">Authentic Content</span>
-                                <div class="card-text">Every business has a story.</div>
-                            </div>
-                            <div class="visual-card visual-card-2">
-                                <span class="card-tag">Digital Presence</span>
-                                <div class="card-text">Kahaani helps them tell it better.</div>
-                            </div>
-                        </div>
-                    </div>
+        <section class="mission-section" aria-labelledby="mission-title">
+            <div class="container mission-grid">
+                <div>
+                    <span class="mission-kicker">Good stories move people</span>
+                    <h2 class="mission-title" id="mission-title">We get the job done.</h2>
+                </div>
+                <div class="mission-copy">
+                    <p>We turn what makes your business different into a story people remember. From strategy and social content to photography, video and websites, Kahaani brings the creative and digital pieces together to help ambitious Indian brands grow.</p>
+                    <a class="mission-link" href="#services">Explore what we do <span aria-hidden="true">&nbsp;↗</span></a>
                 </div>
             </div>
         </section>
@@ -1218,6 +1563,7 @@
             <div class="container">
                 <div class="section-header text-center">
                     <span class="tag-pill">Our Work</span>
+                    <span class="section-kicker">Made with intention</span>
                     <h2 class="section-title">Stories we've helped tell.</h2>
                     <p class="section-subtitle">
                         Explore our featured work across cafés, boutique B&Bs, and memorable events.
@@ -1704,7 +2050,6 @@
                                 </svg>
                             </div>
                             <h3 class="service-title">Reel Videography</h3>
-                            <div class="service-price">₹3,500</div>
                             <p class="service-description">
                                 Professionally shot and edited short-form video made for social media.
                             </p>
@@ -1721,7 +2066,6 @@
                                 </svg>
                             </div>
                             <h3 class="service-title">Photography</h3>
-                            <div class="service-price">₹2,500</div>
                             <p class="service-description">
                                 10–20 professionally captured and edited photos for your business.
                             </p>
@@ -1739,7 +2083,6 @@
                                 </svg>
                             </div>
                             <h3 class="service-title">Website</h3>
-                            <div class="service-price">₹6,000</div>
                             <p class="service-description">
                                 A clean, responsive website that gives your business a professional home online.
                             </p>
@@ -1756,7 +2099,6 @@
                                 </svg>
                             </div>
                             <h3 class="service-title">Social Media Marketing</h3>
-                            <div class="service-price">₹7,500/month</div>
                             <p class="service-description">
                                 We handle, tune and improve your social presence with a strategy built around your business.
                             </p>
@@ -1775,7 +2117,6 @@
                                 </svg>
                             </div>
                             <h3 class="service-title">Event Photography &amp; Videography</h3>
-                            <div class="service-price">Starting from ₹4,999</div>
                             <p class="service-description">
                                 Complete coverage for your event: photography, videography, reels and highlight videos.
                             </p>
@@ -1819,8 +2160,6 @@
                         </div>
 
                         <div class="package-pricing-box">
-                            <span class="package-price-label">All-Inclusive Price</span>
-                            <div class="package-price-amount package-price-amount--range">₹22,000–₹25,000</div>
                             <a href="#enquiry" onclick="preselectPackage()" class="btn btn-gold btn-block">Get the Complete Package</a>
                         </div>
                     </div>
@@ -1833,7 +2172,6 @@
                     <div class="package-tier-grid package-tier-grid--3">
                         <div class="package-pricing-box">
                             <span class="package-price-label">4-Reel Pack</span>
-                            <div class="package-price-amount">₹10,000</div>
                             <ul class="package-features">
                                 <li class="package-feature-item">
                                     <span class="package-check-icon" aria-hidden="true">✓</span>
@@ -1844,7 +2182,6 @@
                         </div>
                         <div class="package-pricing-box">
                             <span class="package-price-label">Content Pack</span>
-                            <div class="package-price-amount">₹14,000</div>
                             <ul class="package-features">
                                 <li class="package-feature-item">
                                     <span class="package-check-icon" aria-hidden="true">✓</span>
@@ -1859,7 +2196,6 @@
                         </div>
                         <div class="package-pricing-box">
                             <span class="package-price-label">Brand Starter</span>
-                            <div class="package-price-amount">₹18,000</div>
                             <ul class="package-features">
                                 <li class="package-feature-item">
                                     <span class="package-check-icon" aria-hidden="true">✓</span>
@@ -1882,7 +2218,6 @@
                     <div class="package-tier-grid">
                         <div class="package-pricing-box">
                             <span class="package-price-label">Essential</span>
-                            <div class="package-price-amount">₹4,999</div>
                             <ul class="package-features">
                                 <li class="package-feature-item">
                                     <span class="package-check-icon" aria-hidden="true">✓</span>
@@ -1901,7 +2236,6 @@
                         </div>
                         <div class="package-pricing-box">
                             <span class="package-price-label">Standard</span>
-                            <div class="package-price-amount">₹7,999</div>
                             <ul class="package-features">
                                 <li class="package-feature-item">
                                     <span class="package-check-icon" aria-hidden="true">✓</span>
@@ -1920,7 +2254,6 @@
                         </div>
                         <div class="package-pricing-box">
                             <span class="package-price-label">Full Event</span>
-                            <div class="package-price-amount">₹11,999</div>
                             <ul class="package-features">
                                 <li class="package-feature-item">
                                     <span class="package-check-icon" aria-hidden="true">✓</span>
@@ -1943,7 +2276,6 @@
                         </div>
                         <div class="package-pricing-box">
                             <span class="package-price-label">Premium</span>
-                            <div class="package-price-amount">₹16,999</div>
                             <ul class="package-features">
                                 <li class="package-feature-item">
                                     <span class="package-check-icon" aria-hidden="true">✓</span>
@@ -2011,6 +2343,15 @@
                         </p>
                     </article>
                 </div>
+            </div>
+        </section>
+
+        <section class="cta-band" aria-labelledby="cta-title">
+            <div class="container cta-inner">
+                <h2 class="cta-title" id="cta-title">Ready to bring your story to life?</h2>
+                <a class="cta-arrow" href="#enquiry" aria-label="Contact Kahaani">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </a>
             </div>
         </section>
 
@@ -2094,28 +2435,28 @@
                                     <legend class="form-label">What services do you need? *</legend>
                                     <div class="checkbox-group">
                                         <label class="checkbox-label">
-                                            <input type="checkbox" name="services" value="Reel Videography — ₹3,500">
-                                            <span>Reel Videography — ₹3,500</span>
+                                            <input type="checkbox" name="services" value="Reel Videography">
+                                            <span>Reel Videography</span>
                                         </label>
                                         <label class="checkbox-label">
-                                            <input type="checkbox" name="services" value="Photography — ₹2,500">
-                                            <span>Photography — ₹2,500</span>
+                                            <input type="checkbox" name="services" value="Photography">
+                                            <span>Photography</span>
                                         </label>
                                         <label class="checkbox-label">
-                                            <input type="checkbox" name="services" value="Website — ₹6,000">
-                                            <span>Website — ₹6,000</span>
+                                            <input type="checkbox" name="services" value="Website">
+                                            <span>Website</span>
                                         </label>
                                         <label class="checkbox-label">
-                                            <input type="checkbox" name="services" value="Social Media Marketing — ₹7,500/month">
-                                            <span>Social Media Marketing — ₹7,500/month</span>
+                                            <input type="checkbox" name="services" value="Social Media Marketing">
+                                            <span>Social Media Marketing</span>
                                         </label>
                                         <label class="checkbox-label">
-                                            <input type="checkbox" name="services" value="Event Photography &amp; Videography — Starting from ₹4,999">
-                                            <span>Event Photography &amp; Videography — Starting from ₹4,999</span>
+                                            <input type="checkbox" name="services" value="Event Photography &amp; Videography">
+                                            <span>Event Photography &amp; Videography</span>
                                         </label>
                                         <label class="checkbox-label">
-                                            <input type="checkbox" id="pkg-checkbox" name="services" value="Complete Brand Package — ₹22,000–₹25,000">
-                                            <span><strong>Complete Brand Package — ₹22,000–₹25,000</strong></span>
+                                            <input type="checkbox" id="pkg-checkbox" name="services" value="Complete Brand Package">
+                                            <span><strong>Complete Brand Package</strong></span>
                                         </label>
                                     </div>
                                 </fieldset>
@@ -2142,13 +2483,32 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="footer-logo">Kahaani.</a>
-                    <p class="footer-tagline">Your Brand. Your Story.</p>
+                    <a href="#" class="footer-logo">We are Kahaani.</a>
+                    <p class="footer-tagline">Your brand. Your story. Told with intention.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h2 class="footer-column-title">Explore</h2>
+                    <ul class="footer-links">
+                        <li><a href="#work">Our work</a></li>
+                        <li><a href="#services">Our services</a></li>
+                        <li><a href="#package">Packages</a></li>
+                        <li><a href="#approach">About us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h2 class="footer-column-title">Say hello</h2>
+                    <ul class="footer-links">
+                        <li><a href="#enquiry">Start a project</a></li>
+                        <li><a href="tel:+919347183698">Call / WhatsApp</a></li>
+                    </ul>
                 </div>
 
                 <div class="footer-info">
-                    <p><strong>Founder:</strong> Chitrakavi Srivatsa</p>
-                    <p><strong>Phone:</strong> +91 93471 83698</p>
+                    <h2 class="footer-column-title">The people behind the story</h2>
+                    <p><strong>Founder</strong><br>Chitrakavi Srivatsa</p>
+                    <p><a href="tel:+919347183698">+91 93471 83698</a></p>
                 </div>
             </div>
 
@@ -2165,6 +2525,36 @@
     <script>
         // Set dynamic copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        const navbar = document.querySelector('.navbar');
+        const updateNavbarScrollState = () => navbar.classList.toggle('is-scrolled', window.scrollY > 12);
+        window.addEventListener('scroll', updateNavbarScrollState, { passive: true });
+        updateNavbarScrollState();
+
+        const revealTargets = document.querySelectorAll(
+            '.hero-gallery, .section-header, .mission-grid > div, .work-card, .service-card, .package-card, .step-card, .cta-inner, .enquiry-info, .enquiry-form-card'
+        );
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (reducedMotion || !('IntersectionObserver' in window)) {
+            revealTargets.forEach(element => element.classList.add('is-visible'));
+        } else {
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+
+            revealTargets.forEach(element => {
+                const siblingIndex = Array.from(element.parentElement.children).indexOf(element);
+                element.style.setProperty('--reveal-delay', `${(siblingIndex % 6) * 90}ms`);
+                element.classList.add('motion-reveal');
+                revealObserver.observe(element);
+            });
+        }
 
         // Mobile Menu Toggle logic
         const menuToggle = document.querySelector('.mobile-menu-toggle');
